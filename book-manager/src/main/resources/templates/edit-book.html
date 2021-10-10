@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+          rel="stylesheet">
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Sửa nhân viên</title>
+</head>
+<body>
+<div class="container" style="margin-top: 10px;">
+    <div class="row"
+         style="border: 1px darkgrey solid; border-radius: 10px; width: 50%; margin: 0 auto; padding: 20px;">
+        <div class="col-sm-12">
+            <p style="float: right; font-size: 16px">
+                <label th:text="${session.USERNAME}"></label> <a href="/logout">Đăng xuất</a>
+            </p>
+
+            <h2 class="myclass">Sửa sách</h2>
+
+            <form enctype="multipart/form-data" method="post" th:action="${ACTION}"
+                  th:object="${BOOKDTO}">
+                <div class="form-group">
+                    <label>Mã sách</label> <input class="form-control" id="id"
+                                                  name="id" placeholder="Nhập mã sách" readonly="readonly" th:field="*{id}"
+                                                  type="text" value="">
+                </div>
+                <div class="form-group">
+                    <label>Tên sách</label> <input class="form-control" id="name"
+                                                   name="name" placeholder="Nhập tên nhân viên" th:field="*{name}"
+                                                   type="text" value="">
+                </div>
+                <div class="form-group">
+                    <label>Thông tin sách</label> <input class="form-control" id="detail"
+                                                         name="detail" placeholder="Nhập thông tin sách"
+                                                         th:field="*{detail}"
+                                                         type="text" value="">
+                </div>
+                <div class="form-group">
+                    <label>Số lượng</label> <input class="form-control" id="count"
+                                                   name="count" placeholder="Nhập số lượng" th:field="*{count}"
+                                                   type="text" value="">
+                </div>
+                <div class="form-group">
+                    <label>Ảnh</label> <input class="form-control" id="photo"
+                                              name="photo" placeholder="Enter photo" th:field="*{photo}"
+                                              type="file">
+                </div>
+
+                <p style="color: red" th:text="${EDIT_ERROR}"></p>
+                <button class="btn btn-primary" type="submit">Lưu</button>
+                <button class="btn btn-danger" type="reset">Hủy bỏ</button>
+                <a class="btn btn-warning" href="/books/list">Xem danh sách các sách hiện có</a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

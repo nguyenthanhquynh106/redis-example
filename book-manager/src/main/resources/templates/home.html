@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Trang chủ</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .header > h3 {
+            text-transform: uppercase;
+        }
+
+        .separator {
+            margin: 3rem 0;
+            border-bottom: 4px dashed #3498db;
+        }
+
+        .vertical-menu {
+            width: 100%;
+        }
+
+        .logo {
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .vertical-menu a {
+            background-color: #eee;
+            color: black;
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+        }
+
+        .vertical-menu a:hover {
+            background-color: #ccc;
+        }
+
+        .vertical-menu a.active {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .row.content {
+            height: 92vh;
+        }
+
+        .sidenav {
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+            height: 8vh;
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row content">
+
+        <div class="col-sm-3 sidenav">
+            <img alt="" class="logo" src="https://anphuocbooks.vn/upload/templatemo_2/img/icon_s.png">
+            <div class="vertical-menu">
+                <a class="active" href="#">Trang chủ</a>
+                <a href="/books/list">Quản lý sách</a>
+            </div>
+            <br>
+        </div>
+
+        <div class="col-sm-9">
+            <div class="header">
+                <h3 style="">Admin: <span th:text="${session.USERNAME}"></span></h3>
+                <h3 style="">Tuổi: <span th:text="${session.AGE}"></span></h3>
+                <h4>Đây là trang quản trị thư viện NTQ</h4>
+                <div class="separator"></div>
+            </div>
+            <h3>WHO WE ARE?</h3>
+            <button class="btn btn-danger btn-sm"><a href="https://www.facebook.com/NtqSolutionJsc"
+                                                     style="color: #fff; text-decoration: none;">Facebook</a></button>
+            <button
+                    class="btn btn-primary btn-sm"><a href="https://vn.linkedin.com/company/ntq-solution-jsc"
+                                                      style="color: #fff; text-decoration: none;">LinkedIn</a></button>
+            <br> <br>
+            <p>
+                We are a Vietnamese based company, specialized in Software Consulting & Development. Founded in 2011 by
+                a group of IT experts with great passion for technology, our company has been providing cutting edge
+                engineering solutions, helping worldwide customers untangle their issues. We pride ourselves in the
+                quality of our work and constantly seek new ways to improve our know-how & capabilities.
+            </p> <br>
+            <h3>OVERVIEW</h3>
+            <p>
+                NTQ Solution is a Global IT Consulting & Software development company that embraces difficulty,
+                creativity & unicity.
+                With a clear vision and passionate young workforce, NTQ has created a family atmosphere that allows the
+                brightest minds to strive for technological perfection & audacious business ideas accomplishment.
+
+                To our honorable customers, NTQ stands for 'New Top Quality' since delivering the best product & service
+                is always NTQ’s belief.
+
+                To our tech-savvy workforce, NTQ is 'NhaToi Quan' - which simply means:'My Family'.
+            </p> <br>
+            <h3>VISION</h3>
+            <p>
+                NTQ wishes to be a converging point of various talents who share the same passion, aspiration, and
+                learning spirit in all fields of science and technology. In union, we shall overcome all obstacles, to
+                transform NTQ into a Vietnam top IT company, and mark our footstep in the worldwide digital map.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<footer class="container-fluid">
+    <p style="font-size: 12px;"><span class="glyphicon glyphicon-copyright-mark"></span> Copyright -
+        <a href="#" style="color: #fff; text-decoration: none;">Nhóm 3 - Java Fresher</a>
+    </p>
+</footer>
+
+<script>
+    var element = $('.requet').val();
+    if(element === "request"){
+        alert("Sống chậm thôiiiiii")
+    }
+</script>
+
+</body>
+
+</html>
